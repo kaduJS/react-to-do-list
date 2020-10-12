@@ -1,8 +1,15 @@
 import React from "react";
-import { makeStyles, createStyles, Theme, FormControl, FormControlLabel, FormLabel, FormGroup, Checkbox } from "@material-ui/core";
+import { useDispatch } from "react-redux";
+import {
+  makeStyles, createStyles,
+  Theme, FormControl, FormControlLabel,
+  FormLabel, FormGroup, Checkbox
+} from "@material-ui/core";
 import { Item } from "../../types";
 
 import { Container } from "./styles";
+
+import { removeFromList, toggleCheckbox } from "../../store/modules/list/actions";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -20,9 +27,15 @@ interface Props {
 }
 
 const Todolist: React.FC<Props> = ({ item }) => {
+  const dispatch = useDispatch();
   const classes = useStyles();
 
-  const handleChange = () => { };
+  const handleClicked = (item: Item) => {
+    dispatch(toggleCheckbox(item));
+  }
+  const handleDoubleClicked = (item: Item) => {
+    dispatch(removeFromList(item));
+  }
 
   return (
     <Container>
@@ -31,7 +44,10 @@ const Todolist: React.FC<Props> = ({ item }) => {
         <FormGroup>
           {item?.map((item) => (
             <FormControlLabel
-              control={<Checkbox checked={item.isChecked} onChange={handleChange} name={item.title} />}
+              key={item.id} control={<Checkbox checked={item.isChecked}
+                onClick={() => handleClicked(item)}
+                onDoubleClick={() => handleDoubleClicked(item)}
+                name={item.title} />}
               label={item.title}
             />
           ))}

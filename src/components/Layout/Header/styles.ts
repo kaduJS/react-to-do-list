@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
+  padding-top: 25px;
   width: inherit;
+  height: 75px;
   min-height: 75px;
 
   display: inherit;
@@ -10,6 +12,8 @@ export const Container = styled.header`
 
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+
+  box-shadow: var(--primary-color);
 
   background-color: var(--header-bg-color);
 
