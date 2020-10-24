@@ -3,16 +3,16 @@ import { createGlobalStyle } from "styled-components";
 export default createGlobalStyle`
   
   :root {
-    --header-bg-color: #f50057;
+    --header-bg-color: #D8DEDE;
     --main-bg-color: #F2F2F2;
-    --footer-bg-color: #ffbed5;
+    --footer-bg-color: #D8DEDE;
 
     --button-bg-color: #C9F2F2;
 
     --primary-color: #F2F2F2;
     --secondary-color: #132623;
 
-    --primary-color: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    --primary-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
   }
   
   @font-face {

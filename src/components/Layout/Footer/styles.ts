@@ -10,7 +10,7 @@ export const Container = styled.footer`
 
   color: var(--secondary-color);
 
-  box-shadow: var(--primary-color);
+  box-shadow: var(--primary-shadow);
 
   background-color: var(--footer-bg-color);
 `;

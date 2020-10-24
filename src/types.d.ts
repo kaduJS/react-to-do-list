@@ -5,3 +5,8 @@ type Item = {
   title?: string;
   isChecked?: boolean;
 };
+
+type Action = {
+  type: string | undefined;
+  payload: Array<Item> | any;
+}

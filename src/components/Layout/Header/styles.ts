@@ -21,6 +21,10 @@ export const Container = styled.header`
     width: 225px;
   }
 
+  input:focus {
+    color: #3f51b5;
+  }
+
   button {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;

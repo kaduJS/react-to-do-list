@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { Container } from "./styles";
 
-import Todolist from "../../Todolist";
+import ToDoList from "../../ToDoList";
 import { Item } from "../../../types";
 
 interface List {
@@ -16,7 +16,7 @@ const Main: React.FC = () => {
   });
   return (
     <Container>
-      <Todolist item={list} />
+      <ToDoList item={list} />
     </Container>
   );
 };
